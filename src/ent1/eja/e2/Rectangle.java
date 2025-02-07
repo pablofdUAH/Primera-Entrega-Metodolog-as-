@@ -1,8 +1,8 @@
 package ent1.eja.e2;
 
 public class Rectangle {
-    float length = 1.0f;
-    float width = 1.0f;
+    private float length = 1.0f;
+    private float width = 1.0f;
 
     public Rectangle(){}
     public Rectangle(float length,float width){

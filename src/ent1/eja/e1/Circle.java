@@ -1,7 +1,7 @@
 package ent1.eja.e1;
 
 public class Circle {
-    double radius = 1.0;
+    private double radius = 1.0;
     public Circle(){
     }
     public Circle(double radius){
@@ -13,7 +13,7 @@ public class Circle {
     }
 
     public void setRadius(double radius) {
-        this.radius = radius;
+        this.radius=radius;
     }
     public double getArea(){
         return Math.PI * (radius*radius);
