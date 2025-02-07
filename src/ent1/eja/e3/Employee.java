@@ -24,7 +24,7 @@ public class Employee {
         return firstName;
     }
 
-    public String getLastname() {
+    public String getLastName() {
         return lastname;
     }
 
@@ -39,13 +39,13 @@ public class Employee {
     return    salary*12;
     }
     public int raiseSalary(int percent){
-        salary=salary*percent/100;
-        return salary*percent/100;
+        salary = salary + salary*percent/100;
+        return (salary + salary*(percent/100));
     }
 
     @Override
     public String toString(){
-        return "Employee[id="+id+",name="+name+",salary="+salary+"]";
+        return "Employee[id="+id+",name="+getName()+",salary="+salary+"]";
     }
 }
 
