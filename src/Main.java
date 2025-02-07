@@ -1,10 +1,11 @@
 import ent1.eja.e1.Circle;
 import ent1.eja.e2.Rectangle;
 import ent1.eja.e3.Employee;
+import ent1.eja.e4.InvoiceItem;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_eja_e3();
+        ent1_eja_e4();
     }
 
     static public void ent1_eja_e1(){
@@ -58,5 +59,20 @@ public class Main {
         System.out.println(e1);
     }
 
+    static public void ent1_eja_e4(){
+        // Test constructor and toString()
+        InvoiceItem inv1 = new InvoiceItem("A101", "Pen Red", 888, 0.08);
+        System.out.println(inv1); // toString();
+// Test Setters and Getters
+        inv1.setQty(999);
+        inv1.setUnitPrice(0.99);
+        System.out.println(inv1); // toString();
+        System.out.println("id is: " + inv1.getId());
+        System.out.println("desc is: " + inv1.getDesc());
+        System.out.println("qty is: " + inv1.getQty());
+        System.out.println("unitPrice is: " + inv1.getUnitPrice());
+// Test getTotal()
+        System.out.println("The total is: " + inv1.getTotal());
+    }
 }
 
