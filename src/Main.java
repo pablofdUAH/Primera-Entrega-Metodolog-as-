@@ -3,10 +3,11 @@ import ent1.eja.e2.Rectangle;
 import ent1.eja.e3.Employee;
 import ent1.eja.e4.InvoiceItem;
 import ent1.eja.e5.Account;
+import ent1.eja.e6.Date;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_eja_e5();
+        ent1_eja_e6();
     }
 
     static public void ent1_eja_e1(){
@@ -97,6 +98,23 @@ public class Main {
         a1.transferTo(a2, 100); // toString()
         System.out.println(a1);
         System.out.println(a2);
+    }
+
+    static public void ent1_eja_e6(){
+        // Test constructor and toString()
+        Date d1 = new Date(1, 2, 2014);
+        System.out.println(d1); // toString()
+// Test Setters and Getters
+        d1.setMonth(12);
+        d1.setDay(9);
+        d1.setYear(2099);
+        System.out.println(d1); // toString()
+        System.out.println("Month: " + d1.getMonth());
+        System.out.println("Day: " + d1.getDay());
+        System.out.println("Year: " + d1.getYear());
+// Test setDate()
+        d1.setDate(3, 4, 2016);
+        System.out.println(d1); // toString()
     }
 }
 
