@@ -2,10 +2,11 @@ import ent1.eja.e1.Circle;
 import ent1.eja.e2.Rectangle;
 import ent1.eja.e3.Employee;
 import ent1.eja.e4.InvoiceItem;
+import ent1.eja.e5.Account;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_eja_e4();
+        ent1_eja_e5();
     }
 
     static public void ent1_eja_e1(){
@@ -73,6 +74,29 @@ public class Main {
         System.out.println("unitPrice is: " + inv1.getUnitPrice());
 // Test getTotal()
         System.out.println("The total is: " + inv1.getTotal());
+    }
+
+    static public void ent1_eja_e5(){
+        // Test constructor and toString()
+        Account a1 = new Account("A101", "Tan Ah Teck", 88);
+        System.out.println(a1); // toString();
+        Account a2 = new Account("A102", "Kumar"); // default balance
+        System.out.println(a2);
+// Test Getters
+        System.out.println("ID: " + a1.getID());
+        System.out.println("Name: " + a1.getName());
+        System.out.println("Balance: " + a1.getBalance());
+// Test credit() and debit()
+        a1.credit(100);
+        System.out.println(a1);
+        a1.debit(50);
+        System.out.println(a1);
+        a1.debit(500); // debit() error
+        System.out.println(a1);
+// Test transfer()
+        a1.transferTo(a2, 100); // toString()
+        System.out.println(a1);
+        System.out.println(a2);
     }
 }
 
