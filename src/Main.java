@@ -6,10 +6,12 @@ import ent1.eja.e5.Account;
 import ent1.eja.e6.Date;
 import ent1.eja.e7.Time;
 import ent1.eja.e8.Ball;
+import ent1.ejb.e1.Author;
+import ent1.ejb.e1.Book;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_eja_e8();
+        ent1_ejb_e3();
     }
 
     static public void ent1_eja_e1(){
@@ -179,5 +181,60 @@ public class Main {
 
     }
 
+    static public void ent1_ejb_e1(){
+        // Construct an author instance
+        Author ahTeck = new Author("Tan Ah Teck", "ahteck@nowhere.com", 'm');
+        System.out.println(ahTeck); // Author's toString()
+        Book dummyBook = new Book("Java for dummy", ahTeck,19.95,99); // Test Book's Constructor
+        System.out.println(dummyBook); // Test Book's toString()
+// Test Getters and Setters
+        dummyBook.setPrice(29.95);
+        dummyBook.setQty(28);
+        System.out.println("name is: " + dummyBook.getName());
+        System.out.println("price is: " + dummyBook.getPrice());
+        System.out.println("qty is: " + dummyBook.getQty());
+        System.out.println("Author is: " + dummyBook.getAuthor()); // Author's toString(
+        System.out.println("Author's name is: " + dummyBook.getAuthor().getName());
+        System.out.println("Author's email is: " + dummyBook.getAuthor().getEmail());
+// Use an anonymous instance of Author to construct a Book instance
+        Book anotherBook = new Book("more Java",
+                new Author("Paul Tan", "paul@somewhere.com", 'm'), 29.95);
+        System.out.println(anotherBook); // toString()
+    }
+
+    static public void ent1_ejb_e2(){
+        // Declare and allocate an array of Authors
+        ent1.ejb.e2.Author[] authors = new ent1.ejb.e2.Author[2];
+        authors[0] = new ent1.ejb.e2.Author("Tan Ah Teck", "AhTeck@somewhere.com", 'm');
+        authors[1] = new ent1.ejb.e2.Author("Paul Tan", "Paul@nowhere.com", 'm');
+// Declare and allocate a Book instance
+        ent1.ejb.e2.Book javaDummy = new ent1.ejb.e2.Book("Java for Dummy", authors, 19.99, 99);
+        System.out.println(javaDummy); // toString()
+    }
+    static public void ent1_ejb_e3(){
+
+
+// Test Author class
+                ent1.ejb.e3.Author a1 = new ent1.ejb.e3.Author("Tan Ah Teck", "ahteck@nowhere.com");
+                System.out.println(a1);
+                a1.setEmail("ahteck@somewhere.com");
+                System.out.println(a1);
+                System.out.println("name is: " + a1.getName());
+                System.out.println("email is: " + a1.getEmail());
+                // Test Book class
+                ent1.ejb.e3.Book b1 = new ent1.ejb.e3.Book("12345", "Java for dummies", a1, 8.8, 88);
+                System.out.println(b1);
+                b1.setPrice(9.9);
+                b1.setQty(99);
+                System.out.println(b1);
+                System.out.println("isbn is: " + b1.getIsbn());
+                System.out.println("name is: " + b1.getName());
+                System.out.println("price is: " + b1.getPrice());
+                System.out.println("qty is: " + b1.getQty());
+                System.out.println("author is: " + b1.getAuthor()); // Author's toString()
+                System.out.println("author's name: " + b1.getAuthorName());
+                System.out.println("author's name: " + b1.getAuthor().getName());
+                System.out.println("author's email: " + b1.getAuthor().getEmail());
+    }
 }
 
