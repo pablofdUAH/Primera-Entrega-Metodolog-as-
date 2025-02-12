@@ -1,4 +1,6 @@
-package ent1.ejb.e1;
+package ent1.ejb.e3;
+
+import ent1.ejb.e3.Author;
 
 public class Book{
     private String isbn;

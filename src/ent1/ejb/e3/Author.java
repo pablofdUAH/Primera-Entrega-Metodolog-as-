@@ -1,4 +1,4 @@
-package ent1.ejb.e1;
+package ent1.ejb.e3;
 
 public class Author {
     private String name;
