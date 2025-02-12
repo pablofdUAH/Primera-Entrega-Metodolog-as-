@@ -3,10 +3,13 @@ import ent1.eja.e2.Rectangle;
 import ent1.eja.e3.Employee;
 import ent1.eja.e4.InvoiceItem;
 import ent1.eja.e5.Account;
+import ent1.eja.e6.Date;
+import ent1.eja.e7.Time;
+import ent1.eja.e8.Ball;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_eja_e5();
+        ent1_eja_e8();
     }
 
     static public void ent1_eja_e1(){
@@ -98,5 +101,83 @@ public class Main {
         System.out.println(a1);
         System.out.println(a2);
     }
+
+    static public void ent1_eja_e6(){
+        // Test constructor and toString()
+        Date d1 = new Date(1, 2, 2014);
+        System.out.println(d1); // toString()
+// Test Setters and Getters
+        d1.setMonth(12);
+        d1.setDay(9);
+        d1.setYear(2099);
+        System.out.println(d1); // toString()
+        System.out.println("Month: " + d1.getMonth());
+        System.out.println("Day: " + d1.getDay());
+        System.out.println("Year: " + d1.getYear());
+// Test setDate()
+        d1.setDate(3, 4, 2016);
+        System.out.println(d1); // toString()
+    }
+
+    static public void ent1_eja_e7(){
+        // Test constructors and toString()
+        Time t1 = new Time(1, 2, 3);
+        System.out.println(t1); // toString()
+// Test Setters and Getters
+        t1.setHour(4);
+        t1.setMinute(5);
+        t1.setSecond(6);
+        System.out.println(t1); // toString()
+        System.out.println("Hour: " + t1.getHour());
+        System.out.println("Minute: " + t1.getMinute());
+        System.out.println("Second: " + t1.getSecond());
+// Test setTime()
+        t1.setTime(23, 59, 58);
+        System.out.println(t1); // toString()
+// Test nextSecond();
+        System.out.println(t1.nextSecond());
+        System.out.println(t1.nextSecond().nextSecond());
+// Test previousSecond()
+        System.out.println(t1.previousSecond());
+        System.out.println(t1.previousSecond().previousSecond());
+    }
+
+    static public void ent1_eja_e8(){
+        // Test constructor and toString()
+        Ball ball = new Ball(1.1f, 2.2f, 10, 3.3f, 4.4f);
+        System.out.println(ball); // toString()
+// Test Setters and Getters
+        ball.setX(80.0f);
+        ball.setY(35.0f);
+        ball.setRadius(5);
+        ball.setXDelta(4.0f);
+        ball.setYDelta(6.0f);
+        System.out.println(ball); // toString()
+        System.out.println("x is: " + ball.getX());
+        System.out.println("y is: " + ball.getY());
+        System.out.println("radius is: " + ball.getRadius());
+        System.out.println("xDelta is: " + ball.getXDelta());
+        System.out.println("yDelta is: " + ball.getYDelta());
+        float xMin = 0.0f;
+        float xMax = 100.0f;
+        float yMin = 0.0f;
+        float yMax = 50.0f;
+        for (int i = 0; i < 15; i++) {
+            ball.move();
+            System.out.println(ball);
+            float xNew = ball.getX();
+            float yNew = ball.getY();
+            int radius = ball.getRadius();
+// Check boundary value to bounce back
+            if ((xNew + radius) > xMax || (xNew - radius) < xMin) {
+                ball.reflectHorizontal();
+            }
+            if ((yNew + radius) > yMax || (yNew - radius) < yMin) {
+                ball.reflectVertical();
+            }
+        }
+
+    }
+
 }
 
