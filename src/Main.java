@@ -8,10 +8,12 @@ import ent1.eja.e7.Time;
 import ent1.eja.e8.Ball;
 import ent1.ejb.e1.Author;
 import ent1.ejb.e1.Book;
+import ent1.ejb.e4.Customer;
+import ent1.ejb.e4.Invoice;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_ejb_e3();
+        ent1_ejb_e4();
     }
 
     static public void ent1_eja_e1(){
@@ -235,6 +237,29 @@ public class Main {
                 System.out.println("author's name: " + b1.getAuthorName());
                 System.out.println("author's name: " + b1.getAuthor().getName());
                 System.out.println("author's email: " + b1.getAuthor().getEmail());
+
+    }
+     static public void ent1_ejb_e4(){
+        // Test Customer class
+        Customer c1 = new Customer(88, "Tan Ah Teck", 10);
+        System.out.println(c1); // Customer's toString()
+        c1.setDiscount(8);
+        System.out.println(c1);
+        System.out.println("id is: " + c1.getId());
+        System.out.println("name is: " + c1.getName());
+        System.out.println("discount is: " + c1.getDiscount());
+// Test Invoice class
+        Invoice inv1 = new Invoice(101, c1, 888.8);
+        System.out.println(inv1);
+        inv1.setAmount(999.9);
+        System.out.println(inv1);
+        System.out.println("id is: " + inv1.getId());
+        System.out.println("customer is: " + inv1.getCustomer()); // Customer's toString()
+        System.out.println("amount is: " + inv1.getAmount());
+        System.out.println("customer's id is: " + inv1.getCustomerId());
+        System.out.println("customer's name is: " + inv1.getCustomerName());
+        System.out.println("customer's discount is: " + inv1.getCustomerDiscount());
+        System.out.printf("amount after discount is: %.2f%n", inv1.getAmountAfterDiscount());
     }
 }
 
