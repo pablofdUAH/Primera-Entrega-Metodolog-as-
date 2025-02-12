@@ -261,5 +261,18 @@ public class Main {
         System.out.println("customer's discount is: " + inv1.getCustomerDiscount());
         System.out.printf("amount after discount is: %.2f%n", inv1.getAmountAfterDiscount());
     }
+    static public void ent1_ejb_e5(){
+        ent1.ejb.e5.Customer cus1 = new ent1.ejb.e5.Customer(88,"Alfon",'f');
+        System.out.println(cus1);
+        cus1.setGender('m');
+        System.out.println(cus1.getGender());
+        System.out.println(cus1.getId());
+        System.out.println(cus1.getName());
+        ent1.ejb.e5.Account account1 = new ent1.ejb.e5.Account(888,cus1,600);
+        System.out.println(account1);
+        System.out.println("id is: " + account1.getId());
+        System.out.println("");
+
+    }
 }
 

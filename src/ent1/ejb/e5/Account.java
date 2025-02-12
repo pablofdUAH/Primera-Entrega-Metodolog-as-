@@ -37,5 +37,16 @@ public class Account {
     public String toString(){
         return customer+" "+"balance=$"+balance;
     }
+    public void deposit(double amount){
+        setBalance(getBalance()+amount);
+
+    }
+    public void withdraw(double amount){
+        if (getBalance()<amount){
+            setBalance(getBalance()-amount);
+
+        }else {System.out.println("amount withdrawn exceeds the current balance");}
+    }
+
 
 }
