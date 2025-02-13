@@ -13,7 +13,7 @@ import ent1.ejb.e4.Invoice;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_ejb_e4();
+        ent1_ejb_e5();
     }
 
     static public void ent1_eja_e1(){
@@ -271,8 +271,13 @@ public class Main {
         ent1.ejb.e5.Account account1 = new ent1.ejb.e5.Account(888,cus1,600);
         System.out.println(account1);
         System.out.println("id is: " + account1.getId());
-        System.out.println("");
-
+        System.out.println(("money: "+account1.getBalance()));
+        account1.setBalance(99.9);
+        account1.withdraw(99.9);
+        System.out.println(("money: "+account1.getBalance()));
+        account1.deposit(100.0);
+        System.out.println(("money: "+account1.getBalance()));
+        System.out.println(account1);
     }
 }
 
