@@ -11,10 +11,11 @@ import ent1.ejb.e1.Book;
 import ent1.ejb.e4.Customer;
 import ent1.ejb.e4.Invoice;
 import ent1.ejb.e6.MyPoint;
+import ent1.ejb.e8.MyCircle;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_ejb_e6();
+        ent1_ejb_e8();
     }
 
     static public void ent1_eja_e1(){
@@ -310,6 +311,39 @@ public class Main {
             }
             System.out.println();
         }
+
     }
+    static public void ent1_ejb_e8(){
+        // Crear un círculo con el constructor por defecto
+        MyCircle circle1 = new MyCircle();
+        System.out.println(circle1.toString());  // Esperado: "MyCircle[radius=1, center=(0,0)]"
+
+        // Crear un círculo con valores específicos
+        MyCircle circle2 = new MyCircle(5, 5, 3);
+        System.out.println(circle2.toString());  // Esperado: "MyCircle[radius=3, center=(5,5)]"
+
+        // Probar métodos getter
+        System.out.println("Radio: " + circle2.getRadius());  // Esperado: 3
+        System.out.println("Centro X: " + circle2.getCenterX());  // Esperado: 5
+        System.out.println("Centro Y: " + circle2.getCenterY());  // Esperado: 5
+
+        // Probar métodos setter
+        circle2.setRadius(10);
+        circle2.setCenter(new MyPoint(2, 2));
+        System.out.println(circle2.toString());  // Esperado: "MyCircle[radius=10, center=(2,2)]"
+
+        // Probar getCenterXY()
+        int[] centerXY = circle2.getCenterXY();
+        System.out.println("CentroXY: (" + centerXY[0] + "," + centerXY[1] + ")");  // Esperado: (2,2)
+
+        // Probar métodos de cálculo
+        System.out.println("Área: " + circle2.getArea());  // Esperado: 314.159265...
+        System.out.println("Circunferencia: " + circle2.getCircumference());  // Esperado: 62.831853...
+
+        // Probar distancia entre círculos
+        System.out.println("Distancia entre circle1 y circle2: " + circle1.distance(circle2));
+        // Esperado: 2.828427... (distancia entre (0,0) y (2,2))
+    }
+
 }
 
