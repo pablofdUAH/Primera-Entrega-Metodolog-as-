@@ -12,13 +12,14 @@ import ent1.ejb.e4.Customer;
 import ent1.ejb.e4.Invoice;
 import ent1.ejb.e6.MyPoint;
 import ent1.ejb.e8.MyCircle;
+import ent1.ejb.e9.MyTriangle;
 
 public class Main {
     public static void main(String[] args) {
-        ent1_ejb_e8();
+        ent1_ejb_e9();
     }
 
-    static public void ent1_eja_e1(){
+    static public void ent1_eja_e1() {
         // Test Constructors and toString()
         Circle c1 = new Circle(1.1);
         System.out.println(c1); // toString()
@@ -33,7 +34,7 @@ public class Main {
         System.out.printf("circumference is: %.2f%n", c1.getCircumference());
     }
 
-    static public void ent1_eja_e2(){
+    static public void ent1_eja_e2() {
         // Test constructors and toString()
 // You need to append a 'f' or 'F' to a float literal
         Rectangle r1 = new Rectangle(1.2f, 3.4f);
@@ -51,7 +52,7 @@ public class Main {
         System.out.printf("perimeter is: %.2f%n", r1.getPerimeter());
     }
 
-    static public void ent1_eja_e3(){
+    static public void ent1_eja_e3() {
         // Test constructor and toString()
         Employee e1 = new Employee(8, "Peter", "Tan", 2500);
         System.out.println(e1); // toString();
@@ -69,7 +70,7 @@ public class Main {
         System.out.println(e1);
     }
 
-    static public void ent1_eja_e4(){
+    static public void ent1_eja_e4() {
         // Test constructor and toString()
         InvoiceItem inv1 = new InvoiceItem("A101", "Pen Red", 888, 0.08);
         System.out.println(inv1); // toString();
@@ -85,7 +86,7 @@ public class Main {
         System.out.println("The total is: " + inv1.getTotal());
     }
 
-    static public void ent1_eja_e5(){
+    static public void ent1_eja_e5() {
         // Test constructor and toString()
         Account a1 = new Account("A101", "Tan Ah Teck", 88);
         System.out.println(a1); // toString();
@@ -108,7 +109,7 @@ public class Main {
         System.out.println(a2);
     }
 
-    static public void ent1_eja_e6(){
+    static public void ent1_eja_e6() {
         // Test constructor and toString()
         Date d1 = new Date(1, 2, 2014);
         System.out.println(d1); // toString()
@@ -125,7 +126,7 @@ public class Main {
         System.out.println(d1); // toString()
     }
 
-    static public void ent1_eja_e7(){
+    static public void ent1_eja_e7() {
         // Test constructors and toString()
         Time t1 = new Time(1, 2, 3);
         System.out.println(t1); // toString()
@@ -148,7 +149,7 @@ public class Main {
         System.out.println(t1.previousSecond().previousSecond());
     }
 
-    static public void ent1_eja_e8(){
+    static public void ent1_eja_e8() {
         // Test constructor and toString()
         Ball ball = new Ball(1.1f, 2.2f, 10, 3.3f, 4.4f);
         System.out.println(ball); // toString()
@@ -185,11 +186,11 @@ public class Main {
 
     }
 
-    static public void ent1_ejb_e1(){
+    static public void ent1_ejb_e1() {
         // Construct an author instance
         Author ahTeck = new Author("Tan Ah Teck", "ahteck@nowhere.com", 'm');
         System.out.println(ahTeck); // Author's toString()
-        Book dummyBook = new Book("Java for dummy", ahTeck,19.95,99); // Test Book's Constructor
+        Book dummyBook = new Book("Java for dummy", ahTeck, 19.95, 99); // Test Book's Constructor
         System.out.println(dummyBook); // Test Book's toString()
 // Test Getters and Setters
         dummyBook.setPrice(29.95);
@@ -206,7 +207,7 @@ public class Main {
         System.out.println(anotherBook); // toString()
     }
 
-    static public void ent1_ejb_e2(){
+    static public void ent1_ejb_e2() {
         // Declare and allocate an array of Authors
         ent1.ejb.e2.Author[] authors = new ent1.ejb.e2.Author[2];
         authors[0] = new ent1.ejb.e2.Author("Tan Ah Teck", "AhTeck@somewhere.com", 'm');
@@ -215,33 +216,35 @@ public class Main {
         ent1.ejb.e2.Book javaDummy = new ent1.ejb.e2.Book("Java for Dummy", authors, 19.99, 99);
         System.out.println(javaDummy); // toString()
     }
-    static public void ent1_ejb_e3(){
+
+    static public void ent1_ejb_e3() {
 
 
 // Test Author class
-                ent1.ejb.e3.Author a1 = new ent1.ejb.e3.Author("Tan Ah Teck", "ahteck@nowhere.com");
-                System.out.println(a1);
-                a1.setEmail("ahteck@somewhere.com");
-                System.out.println(a1);
-                System.out.println("name is: " + a1.getName());
-                System.out.println("email is: " + a1.getEmail());
-                // Test Book class
-                ent1.ejb.e3.Book b1 = new ent1.ejb.e3.Book("12345", "Java for dummies", a1, 8.8, 88);
-                System.out.println(b1);
-                b1.setPrice(9.9);
-                b1.setQty(99);
-                System.out.println(b1);
-                System.out.println("isbn is: " + b1.getIsbn());
-                System.out.println("name is: " + b1.getName());
-                System.out.println("price is: " + b1.getPrice());
-                System.out.println("qty is: " + b1.getQty());
-                System.out.println("author is: " + b1.getAuthor()); // Author's toString()
-                System.out.println("author's name: " + b1.getAuthorName());
-                System.out.println("author's name: " + b1.getAuthor().getName());
-                System.out.println("author's email: " + b1.getAuthor().getEmail());
+        ent1.ejb.e3.Author a1 = new ent1.ejb.e3.Author("Tan Ah Teck", "ahteck@nowhere.com");
+        System.out.println(a1);
+        a1.setEmail("ahteck@somewhere.com");
+        System.out.println(a1);
+        System.out.println("name is: " + a1.getName());
+        System.out.println("email is: " + a1.getEmail());
+        // Test Book class
+        ent1.ejb.e3.Book b1 = new ent1.ejb.e3.Book("12345", "Java for dummies", a1, 8.8, 88);
+        System.out.println(b1);
+        b1.setPrice(9.9);
+        b1.setQty(99);
+        System.out.println(b1);
+        System.out.println("isbn is: " + b1.getIsbn());
+        System.out.println("name is: " + b1.getName());
+        System.out.println("price is: " + b1.getPrice());
+        System.out.println("qty is: " + b1.getQty());
+        System.out.println("author is: " + b1.getAuthor()); // Author's toString()
+        System.out.println("author's name: " + b1.getAuthorName());
+        System.out.println("author's name: " + b1.getAuthor().getName());
+        System.out.println("author's email: " + b1.getAuthor().getEmail());
 
     }
-     static public void ent1_ejb_e4(){
+
+    static public void ent1_ejb_e4() {
         // Test Customer class
         Customer c1 = new Customer(88, "Tan Ah Teck", 10);
         System.out.println(c1); // Customer's toString()
@@ -263,25 +266,27 @@ public class Main {
         System.out.println("customer's discount is: " + inv1.getCustomerDiscount());
         System.out.printf("amount after discount is: %.2f%n", inv1.getAmountAfterDiscount());
     }
-    static public void ent1_ejb_e5(){
-        ent1.ejb.e5.Customer cus1 = new ent1.ejb.e5.Customer(88,"Alfon",'f');
+
+    static public void ent1_ejb_e5() {
+        ent1.ejb.e5.Customer cus1 = new ent1.ejb.e5.Customer(88, "Alfon", 'f');
         System.out.println(cus1);
         cus1.setGender('m');
         System.out.println(cus1.getGender());
         System.out.println(cus1.getId());
         System.out.println(cus1.getName());
-        ent1.ejb.e5.Account account1 = new ent1.ejb.e5.Account(888,cus1,600);
+        ent1.ejb.e5.Account account1 = new ent1.ejb.e5.Account(888, cus1, 600);
         System.out.println(account1);
         System.out.println("id is: " + account1.getId());
-        System.out.println(("money: "+account1.getBalance()));
+        System.out.println(("money: " + account1.getBalance()));
         account1.setBalance(99.9);
         account1.withdraw(99.9);
-        System.out.println(("money: "+account1.getBalance()));
+        System.out.println(("money: " + account1.getBalance()));
         account1.deposit(100.0);
-        System.out.println(("money: "+account1.getBalance()));
+        System.out.println(("money: " + account1.getBalance()));
         System.out.println(account1);
     }
-    static public void ent1_ejb_e6(){
+
+    static public void ent1_ejb_e6() {
         MyPoint p1 = new MyPoint(); // Test constructor
         System.out.println(p1); // Test toString()
         p1.setX(8); // Test setters
@@ -313,7 +318,8 @@ public class Main {
         }
 
     }
-    static public void ent1_ejb_e8(){
+
+    static public void ent1_ejb_e8() {
         // Crear un círculo con el constructor por defecto
         MyCircle circle1 = new MyCircle();
         System.out.println(circle1.toString());  // Esperado: "MyCircle[radius=1, center=(0,0)]"
@@ -344,6 +350,44 @@ public class Main {
         System.out.println("Distancia entre circle1 y circle2: " + circle1.distance(circle2));
         // Esperado: 2.828427... (distancia entre (0,0) y (2,2))
     }
+    static public void ent1_ejb_e9(){
+        // Crear un triángulo con el constructor que usa coordenadas
+        MyTriangle triangle1 = new MyTriangle(0, 0, 3, 0, 0, 4);
+        System.out.println(triangle1.toString());
+        // Esperado: "MyTriangle[v1=(0,0), v2=(3,0), v3=(0,4)]"
 
+        // Crear un triángulo con el constructor que usa objetos MyPoint
+        MyPoint p1 = new MyPoint(1, 1);
+        MyPoint p2 = new MyPoint(4, 1);
+        MyPoint p3 = new MyPoint(1, 5);
+        MyTriangle triangle2 = new MyTriangle(p1, p2, p3);
+        System.out.println(triangle2.toString());
+        // Esperado: "MyTriangle[v1=(1,1), v2=(4,1), v3=(1,5)]"
+
+        // Probar método getPerimeter()
+        System.out.println("Perímetro de triangle1: " + triangle1.getPerimeter());
+        // Esperado: 12.0 (3 + 4 + 5)
+
+        System.out.println("Perímetro de triangle2: " + triangle2.getPerimeter());
+        // Esperado: 12.0 (3 + 4 + 5)
+
+        // Probar método getType()
+        System.out.println("Tipo de triangle1: " + triangle1.getType());
+        // Esperado: "Scalene" (todos los lados diferentes)
+
+        System.out.println("Tipo de triangle2: " + triangle2.getType());
+        // Esperado: "Scalene" (todos los lados diferentes)
+
+        // Probar con un triángulo equilátero
+        MyTriangle triangle3 = new MyTriangle(0, 0, 2, 0, 1,2);
+        System.out.println(triangle3.toString());
+        // Esperado: "MyTriangle[v1=(0,0), v2=(2,0), v3=(1,1.732)]"
+
+        System.out.println("Perímetro de triangle3: " + triangle3.getPerimeter());
+        // Esperado: 6.0 (todos los lados son 2)
+
+        System.out.println("Tipo de triangle3: " + triangle3.getType());
+        // Esperado: "Equilateral"
+    }
 }
 
