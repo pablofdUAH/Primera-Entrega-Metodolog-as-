@@ -1,9 +1,12 @@
 package ent1.ejb.e7;
 
 public class MyPoint {
+
+    // Zona de atributos
     private int x;
     private int y;
 
+    // Zona de constructores
     // Constructor por defecto (0,0)
     public MyPoint() {
         this.x = 0;
@@ -16,7 +19,7 @@ public class MyPoint {
         this.y = y;
     }
 
-    // Getters
+    // Zona de métodos: Getters
     public int getX() {
         return x;
     }
@@ -29,7 +32,7 @@ public class MyPoint {
         return new int[]{x, y};
     }
 
-    // Setters
+    // Zona de métodos: Setters
     public void setX(int x) {
         this.x = x;
     }
@@ -43,7 +46,7 @@ public class MyPoint {
         this.y = y;
     }
 
-    // Método toString
+    // Zona de métodos: Otros
     @Override
     public String toString() {
         return "(" + x + "," + y + ")";
@@ -64,5 +67,6 @@ public class MyPoint {
         return distance(0, 0);
     }
 }
+
 
 

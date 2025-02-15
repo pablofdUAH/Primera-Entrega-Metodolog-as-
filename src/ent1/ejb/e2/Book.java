@@ -4,25 +4,27 @@ import java.util.Arrays;
 
 public class Book {
 
+    // Zona de atributos
     private String name;
     private Author[] authors;
     private double price;
     private int qty = 0;
 
-
-    public Book(String name, Author[] authors, double price){
-
+    // Zona de constructores
+    public Book(String name, Author[] authors, double price) {
         this.name = name;
         this.authors = authors;
-        this.price = price;
-    }
-    public Book(String name, Author[] authors, double price, int qty){
-        this.name = name;
-        this.authors = authors;
-        this.price = price;
-        this.qty = qty;
+        setPrice(price);
     }
 
+    public Book(String name, Author[] authors, double price, int qty) {
+        this.name = name;
+        this.authors = authors;
+        setPrice(price);
+        setQty(qty);
+    }
+
+    // Zona de métodos: Getters
     public String getName() {
         return name;
     }
@@ -39,27 +41,35 @@ public class Book {
         return qty;
     }
 
-
-
+    // Zona de métodos: Setters
     public void setPrice(double price) {
-        this.price = price;
+        if (price < 0) {
+            this.price = 0;
+        } else {
+            this.price = price;
+        }
     }
 
     public void setQty(int qty) {
-        this.qty = qty;
+        if (qty < 0) {
+            this.qty = 0;
+        } else {
+            this.qty = qty;
+        }
     }
-    public String getAuthorNames(){
-        String devuelvo="";
-        for (Author author:authors){
-            devuelvo = devuelvo + author.getName()+",";
+
+    // Zona de métodos: Otros
+    public String getAuthorNames() {
+        String devuelvo = "";
+        for (Author author : authors) {
+            devuelvo = devuelvo + author.getName() + ",";
         }
         return devuelvo;
     }
 
-
     @Override
-    public String toString(){
-        //return "Book[isbn="+isbn+",Author[name="+author.getName()+",email="+author.getEmail()+"],price="+price+",qty="+qty+"]";
-        return     "Book[name="+name+",authors={"+ Arrays.toString(authors)+"}"+",price="+price+",qty="+qty+"]";
+    public String toString() {
+        return "Book[name=" + name + ",authors={" + Arrays.toString(authors) + "},price=" + price + ",qty=" + qty + "]";
     }
 }
+

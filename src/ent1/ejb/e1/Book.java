@@ -1,28 +1,28 @@
 package ent1.ejb.e1;
 
-import ent1.ejb.e1.Author;
-
 public class Book {
 
+    // Zona de atributos
     private String name;
     private Author author;
     private double price;
     private int qty = 0;
 
-
-    public Book(String name, Author author, double price){
-
+    // Zona de constructores
+    public Book(String name, Author author, double price) {
         this.name = name;
         this.author = author;
-        this.price = price;
-    }
-    public Book(String name, Author author, double price, int qty){
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.qty = qty;
+        setPrice(price);
     }
 
+    public Book(String name, Author author, double price, int qty) {
+        this.name = name;
+        this.author = author;
+        setPrice(price);
+        setQty(qty);
+    }
+
+    // Zona de métodos: Getters
     public String getName() {
         return name;
     }
@@ -39,23 +39,39 @@ public class Book {
         return qty;
     }
 
-
-
+    // Zona de métodos: Setters
     public void setPrice(double price) {
-        this.price = price;
+        if (price < 0) {
+            this.price = 0;
+        } else {
+            this.price = price;
+        }
     }
 
     public void setQty(int qty) {
-        this.qty = qty;
+        if (qty < 0) {
+            this.qty = 0;
+        } else {
+            this.qty = qty;
+        }
     }
-    public String getAuthorName(){
+
+    // Zona de métodos: Otros
+    public String getAuthorName() {
         return author.getName();
     }
-    public String getAuthorEmail(){return author.getEmail();}
-    public char getAuthorGender(){return author.getGender();}
+
+    public String getAuthorEmail() {
+        return author.getEmail();
+    }
+
+    public char getAuthorGender() {
+        return author.getGender();
+    }
+
     @Override
-    public String toString(){
-        //return "Book[isbn="+isbn+",Author[name="+author.getName()+",email="+author.getEmail()+"],price="+price+",qty="+qty+"]";
-        return     "Book[name="+name+","+author+",price="+price+",qty="+qty+"]";
+    public String toString() {
+        return "Book[name=" + name + "," + author + ",price=" + price + ",qty=" + qty + "]";
     }
 }
+

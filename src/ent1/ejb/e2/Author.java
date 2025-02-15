@@ -1,15 +1,20 @@
 package ent1.ejb.e2;
 
 public class Author {
+
+    // Zona de atributos
     private String name;
     private String email;
     private char gender;
-    public Author(String name, String email,char gender){
+
+    // Zona de constructor
+    public Author(String name, String email, char gender) {
         this.name = name;
         this.email = email;
         this.gender = gender;
     }
 
+    // Zona de métodos: Getters
     public String getName() {
         return name;
     }
@@ -18,16 +23,18 @@ public class Author {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public char getGender() {
         return gender;
     }
 
+    // Zona de métodos: Setters
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Zona de métodos: Otros
     @Override
-    public String toString(){
-        return "Author[name="+name+",email="+email+",gender="+gender+"]";
+    public String toString() {
+        return "Author[name=" + name + ",email=" + email + ",gender=" + gender + "]";
     }
 }
