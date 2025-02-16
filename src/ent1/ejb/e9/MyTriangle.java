@@ -21,12 +21,25 @@ public class MyTriangle {
         this.v2 = v2;
         this.v3 = v3;
     }
+    //Zona de métodos: getters
+    public MyPoint getV1() {
+        return v1;
+    }
+
+    public MyPoint getV2() {
+        return v2;
+    }
+
+    public MyPoint getV3() {
+        return v3;
+    }
 
     // Zona de métodos: toString
     @Override
     public String toString() {
         return "MyTriangle[v1=" + v1 + ",v2=" + v2 + ",v3=" + v3 + "]";
     }
+
 
     // Zona de métodos: Otros
     public double getPerimeter() {
