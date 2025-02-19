@@ -47,15 +47,18 @@ public class MyTriangle {
     }
 
     public String getType() {
-        String devuelve;
-        if (v1.distance(v2) == v1.distance(v3) && v1.distance(v2) == v2.distance(v3)) {
-            devuelve = "Equilateral";
-        } else if (v1.distance(v2) == v1.distance(v3) || v1.distance(v2) == v2.distance(v3)) {
-            devuelve = "Isosceles";
+        double distance1 = v1.distance(v2);
+        double distance2 = v1.distance(v3);
+        double distance3 = v2.distance(v3);
+
+        if (distance1 == distance2 && distance1 == distance3) {
+            return "Equilateral";
+        } else if (distance1 == distance2 || distance1 == distance3 || distance2 == distance3) {
+            return "Isosceles";
         } else {
-            devuelve = "Scalene";
+            return "Scalene";
         }
-        return devuelve;
     }
+
 }
 
