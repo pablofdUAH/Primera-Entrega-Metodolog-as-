@@ -1,6 +1,5 @@
 package ent1.ejb.e9;
 
-import ent1.ejb.e6.MyPoint;
 
 public class MyTriangle {
 
@@ -10,7 +9,7 @@ public class MyTriangle {
     private MyPoint v3 = new MyPoint();
 
     // Zona de constructores
-    public MyTriangle(int x1, int y1, int x2, int y2, int x3, int y3) {
+    public MyTriangle(double x1, double y1, double x2, double y2, double x3, double y3) {
         v1.setXY(x1, y1);
         v2.setXY(x2, y2);
         v3.setXY(x3, y3);
@@ -47,13 +46,14 @@ public class MyTriangle {
     }
 
     public String getType() {
-        double distance1 = v1.distance(v2);
-        double distance2 = v1.distance(v3);
-        double distance3 = v2.distance(v3);
+        double tolerance = 1E-6;  // Definimos un margen de error pequeño
+        double d1 = v1.distance(v2);
+        double d2 = v1.distance(v3);
+        double d3 = v2.distance(v3);
 
-        if (distance1 == distance2 && distance1 == distance3) {
+        if (Math.abs(d1 - d2) < tolerance && Math.abs(d1 - d3) < tolerance) {
             return "Equilateral";
-        } else if (distance1 == distance2 || distance1 == distance3 || distance2 == distance3) {
+        } else if (Math.abs(d1 - d2) < tolerance || Math.abs(d1 - d3) < tolerance || Math.abs(d2 - d3) < tolerance) {
             return "Isosceles";
         } else {
             return "Scalene";

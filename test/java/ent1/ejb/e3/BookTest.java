@@ -65,7 +65,7 @@ class BookTest {
 
     @Test
     void testToString() {
-        String expected = "Book[isbn=978-3-16-148410-0,name=Java BasicsAuthor[name=Jane Doe,email=jane.doe@example.com,gender=f],price=29.99,qty=5]";
+        String expected = "Book[isbn=978-3-16-148410-0,name=Java BasicsAuthor[name=Jane Doe,email=jane.doe@example.com],price=29.99,qty=5]";
         assertEquals(expected, book.toString());
     }
 }

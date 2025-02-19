@@ -228,9 +228,9 @@ public class Main {
         System.out.println(triangle1.toString());
 
         // Crear un triángulo usando objetos MyPoint
-        MyPoint p1 = new MyPoint(1, 1);
-        MyPoint p2 = new MyPoint(4, 1);
-        MyPoint p3 = new MyPoint(1, 5);
+        ent1.ejb.e9.MyPoint p1 = new ent1.ejb.e9.MyPoint(1, 1);
+        ent1.ejb.e9.MyPoint p2 = new ent1.ejb.e9.MyPoint(4, 1);
+        ent1.ejb.e9.MyPoint p3 = new ent1.ejb.e9.MyPoint(1, 5);
         MyTriangle triangle2 = new MyTriangle(p1, p2, p3);
         System.out.println(triangle2.toString());
 

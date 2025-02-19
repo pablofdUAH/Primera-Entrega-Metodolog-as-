@@ -355,9 +355,9 @@ public class Main {
         // Esperado: "MyTriangle[v1=(0,0), v2=(3,0), v3=(0,4)]"
 
         // Crear un triángulo con el constructor que usa objetos MyPoint
-        MyPoint p1 = new MyPoint(1, 1);
-        MyPoint p2 = new MyPoint(4, 1);
-        MyPoint p3 = new MyPoint(1, 5);
+        ent1.ejb.e9.MyPoint p1 = new ent1.ejb.e9.MyPoint(1, 1);
+        ent1.ejb.e9.MyPoint p2 = new ent1.ejb.e9.MyPoint(4, 1);
+        ent1.ejb.e9.MyPoint p3 = new ent1.ejb.e9.MyPoint(1, 5);
         MyTriangle triangle2 = new MyTriangle(p1, p2, p3);
         System.out.println(triangle2.toString());
         // Esperado: "MyTriangle[v1=(1,1), v2=(4,1), v3=(1,5)]"
